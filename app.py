@@ -152,19 +152,34 @@ if analyze_btn and uploaded_file:
 
             client = Groq(api_key=groq_key)
 
-            prompt = f"""You are a sales call analyst for a restaurant service training company. Below is a transcribed sales/outreach call ({duration/60:.1f} minutes long).
+            prompt = f"""You are a sales call analyst for a restaurant service training company that helps restaurants improve check averages, guest retention, and structured service/sales systems. Below is a transcribed sales/outreach call ({duration/60:.1f} minutes long).
 
 Analyze it and provide EXACTLY the following sections:
 
-## Call Summary
-2-3 sentence overview of what happened on this call.
+## Bottom Line
+A strategic 3-5 sentence assessment of this prospect. What is the restaurant's real situation? What problem do they have that they may or may not fully recognize? What will hit home the most when positioning our training? Be honest and direct — this is an internal sales brief, not marketing copy. Include any limiting beliefs the prospect expressed and what the real opportunity is.
 
-## Prospect Info
-- **Name:** (prospect's name if mentioned)
-- **Restaurant:** (restaurant name if mentioned)
-- **Location:** (city/state if mentioned)
-- **Role:** (owner, GM, manager, etc.)
-- **Locations:** (number of locations if mentioned)
+## Prospect Profile
+
+**Prospect:** (Name and role — e.g. "Alex (Owner-Operator)")
+
+- Has [leadership structure — GM, exec chef, etc.] but [who is the decision maker]
+- **Concept:** (e.g. Fine-casual, chef-driven, single-unit / multi-unit)
+- **Status:** (years operating, brand strength, any traffic/revenue trends mentioned)
+- **Seats + Revenue:** (seat count, avg check, estimated annual revenue if calculable, upside check target)
+- **FOH Team:** (trainer in place? tenure level? leadership structure?)
+
+## Background & Market Context
+Bullet points covering: location, market conditions mentioned, brand positioning, staffing situation.
+
+## Current Training & Operations Reality
+Bullet points covering: do they have formal training? SOPs? Daily meetings? What's their current approach and where are the gaps?
+
+## Key Service & Sales Opportunities
+Bullet points with specific upsell and service opportunities identified from the call. Include dollar estimates where possible (e.g. "Strategic add-ons: incremental $10-15 per guest achievable through dessert attachment, side pairings, shared appetizers").
+
+## Revenue Impact Potential
+2-3 bullet points quantifying the opportunity. Calculate: if avg check increases by $X, what does that mean annually? Use any numbers the prospect gave you. Frame it as "even a modest X% lift = $Y incremental revenue."
 
 ## Key Moments
 Bullet list of the most important moments with timestamps [MM:SS].
